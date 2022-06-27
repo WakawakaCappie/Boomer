@@ -6,6 +6,7 @@ class Boomerang {
   constructor() {
     this.skin = '🌀';
     this.position = 0;
+    this.isActive = false;
   }
 
   fly() {
