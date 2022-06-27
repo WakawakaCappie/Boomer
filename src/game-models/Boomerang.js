@@ -7,6 +7,8 @@ class Boomerang {
     this.skin = '🌀';
     this.position = 0;
     this.isActive = false;
+    this.afterKill = false;
+    this.wayback = null;
   }
 
   fly() {
