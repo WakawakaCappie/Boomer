@@ -38,6 +38,7 @@ class Hero {
 
   attack() {
     if (this.boomerCount > 0) {
+      
       this.boomerCount -= 1;
       this.boomerang.isActive = true;
       this.boomerang.position = this.position;
