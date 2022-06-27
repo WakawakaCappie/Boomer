@@ -1,22 +1,27 @@
+const { game } = require('../Game');
 // Враг.
 
 class Enemy {
   constructor() {
     this.generateSkin();
-    this.position = 2;
+    this.position = (40+ Math.floor(Math.random()*10));  
+    this.espeed = 1
+    
   }
 
   generateSkin() {
-    const skins = ['👾', '💀', '👹', '👻', '👽', '👿', '💩', '🤡', '🤺', '🧛', '🧟', '🎃'];
+    const skins = ['👾','👹', '👻', '👽', '👿', '💩', '🤡', '🤺', '🧛', '🧟', '🎃', '🛸']; // '💀', 
     this.skin = skins[Math.floor(Math.random() * skins.length)];
   }
 
+  
   moveLeft() {
     // Идём влево.
-    this.position -= 1;
+    this.position -= this.espeed;
   }
 
   die() {
+    this.skin = '🔥'
     this.position = '?';
     console.log('Enemy is dead!');
   }
