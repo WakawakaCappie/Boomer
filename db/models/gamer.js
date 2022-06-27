@@ -15,10 +15,10 @@ module.exports = (sequelize, DataTypes) => {
   }
   Gamer.init({
     gamer_name: {
-      type: Sequelize.TEXT
+      type: DataTypes.TEXT
     },
     score: {
-      type: Sequelize.INTEGER
+      type: DataTypes.INTEGER
     },
   }, {
     sequelize,

@@ -1,12 +1,15 @@
 // Наш герой.
-const boomerang = require('./Boomerang');
-const enemy = require('./Enemy');
+const Boomerang = require('./Boomerang');
+const {saveName} = require('../../write_db');
+const prompt = require("prompt-sync")();
 // var player = require('play-sound')(opts = {})
 
 class Hero {
   constructor(some) {
     this.skin = '🤠'; // можете использовать любые emoji '💃'
     this.position = 1;
+    this.gamerName = prompt('Введите имя игрока: ',);
+    this.gamerScore = 0;
     this.boomerang = some;
     this.boomerCount = 0;
     // this.lives = 3;
@@ -44,9 +47,12 @@ class Hero {
 
   die() {
     this.skin = '💀';
-    // this.enemy.skin = '💀';
-    console.log('YOU ARE DEAD!💀');
-    process.exit();
+    setTimeout( async () => {
+      console.log('YOU ARE DEAD!💀');
+      await saveName( this.gamerName, this.gamerScore); //запись имени игрока и результата игры в бд
+      console.log('Спасибо за игру');
+      process.exit();
+    }, 1000)
   }
 }
 
