@@ -5,7 +5,7 @@
 class Boomerang {
   constructor() {
     this.skin = '🌀';
-    this.position = 0;
+    this.position = null;
     this.isActive = false;
     this.afterKill = false;
     this.wayback = null;
