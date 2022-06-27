@@ -14,11 +14,18 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Player.init({
-    name: DataTypes.TEXT,
-    bestScore: DataTypes.INTEGER,
-    BestTimeOfPlay: DataTypes.INTEGER,
-    killed: DataTypes.INTEGER,
-    allowNull: false,
+    name: {
+      type: DataTypes.TEXT,
+    },
+    bestScore: {
+      type: DataTypes.INTEGER,
+    },
+    BestTimeOfPlay: {
+      type: DataTypes.INTEGER,
+    },
+    killed: {
+      type: DataTypes.INTEGER,
+    },
   }, {
     sequelize,
     modelName: 'Player',

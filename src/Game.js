@@ -17,7 +17,7 @@ class Game {
     d: (hero, boomer) => { hero.moveRight(); }, // boomer.moveRight()},
     w: (hero) => { hero.moveUp(); },
     s: (hero) => { hero.moveDown(); },
-    r: (hero, position) => { hero.attack(); },
+    space: (hero, position) => { hero.attack(); },
     // hero.boomerang.isActive = true;
     //  position.boomerang.position = this.hero.position + 1
 
@@ -32,8 +32,7 @@ class Game {
     this.track = [];
     this.regenerateTrack();
     this.view = new View();
-    this.score = 0;
-    this.renderSpeed = 500;
+    this.renderSpeed = 300;
   }
 
   regenerateTrack() {
@@ -56,7 +55,7 @@ class Game {
       this.hero.boomerang.isActive = false;
       this.enemy.die();
       // this.renderSpeed += Math.floor(Math.random()*100);
-      this.score += 1;
+      this.hero.gamerScore +=1;
       this.enemy = new Enemy();
       this.renderSpeed -= 100;
       this.hero.boomerang.afterKill = true;
@@ -84,7 +83,7 @@ class Game {
       // console.log(this.enemy.position);
       // console.log(this.enemy);
       this.regenerateTrack();
-      this.view.render(this.track, this.track1, this.track7, this.score, this.hero.boomerCount, this.enemy.enemySpeed);
+      this.view.render(this.track, this.track1, this.track7, this.hero.gamerScore, this.hero.boomerCount,);
     }, this.renderSpeed);
   }
 

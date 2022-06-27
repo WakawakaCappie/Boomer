@@ -14,8 +14,12 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Enemy.init({
-    name: DataTypes.TEXT,
-    skin: DataTypes.TEXT,
+    name: {
+      type: DataTypes.TEXT,
+    },
+    skin: {
+      type: DataTypes.TEXT,
+    },
   }, {
     sequelize,
     modelName: 'Enemy',
