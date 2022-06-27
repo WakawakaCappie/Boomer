@@ -48,9 +48,8 @@ class Hero {
   die() {
     this.skin = '💀';
     setTimeout( async () => {
-      console.log('YOU ARE DEAD!💀');
       await saveName( this.gamerName, this.gamerScore); //запись имени игрока и результата игры в бд
-      console.log('Спасибо за игру');
+      console.log('YOU ARE DIED!💀');
       process.exit();
     }, 1000)
   }

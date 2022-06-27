@@ -2,7 +2,7 @@
 const { game } = require('./Game');
 
 class View {
-  render(track,track1,track7,score,boom,speed) {
+  render(track,track1,track7,score,boom) {
     const yourTeamName = 'AKAI';
 
     // Тут всё рисуем.
@@ -12,7 +12,7 @@ class View {
     console.log(track7.join(''));
     console.log()
     console.log('\n\n');
-    console.log(`Your Score  = ${score}. Бумерангов в наличии = ${boom} Скорость игры ${speed}`)
+    console.log(`Your Score = ${score}. Бумерангов в наличии = ${boom}`)
     console.log('\n\n');
     console.log(`Created by "${yourTeamName}" with love`);
   }
