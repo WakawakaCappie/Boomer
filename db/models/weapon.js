@@ -14,9 +14,17 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Weapon.init({
-    name: DataTypes.TEXT,
-    user_id: DataTypes.INTEGER,
-    allowNull: false,
+    name: {
+      type: DataTypes.TEXT
+    },
+    user_id: {
+      type: DataTypes.INTEGER,
+      aalowNull: false,
+      references: {
+        model: 'Players',
+        key: 'id',
+      },
+    },
   }, {
     sequelize,
     modelName: 'Weapon',
